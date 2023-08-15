@@ -8,9 +8,9 @@
 enum ImageOrientation : UInt32 {
     case portrait = 6
     
-    case landscapeLeft = 1
+    case landscapeLeft = 3
     
     case portraitUpsideDown = 7
     
-    case landscapeRight = 3
+    case landscapeRight = 1
 }

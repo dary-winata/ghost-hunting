@@ -11,7 +11,7 @@ import SwiftUI
 struct GhostHuntingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CameraView()
         }
     }
 }

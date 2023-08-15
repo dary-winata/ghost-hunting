@@ -7,28 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0092ED2A8385EF00B49BAA /* CameraViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092EC2A8385EF00B49BAA /* CameraViewRepresentable.swift */; };
+		6A0092EF2A83873100B49BAA /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092EE2A83873100B49BAA /* CameraController.swift */; };
+		6A0092F12A83877F00B49BAA /* CameraController+DelegateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092F02A83877F00B49BAA /* CameraController+DelegateSession.swift */; };
+		6A0092F42A83886400B49BAA /* MachineLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092F32A83886400B49BAA /* MachineLearning.swift */; };
+		6A0092FA2A84786B00B49BAA /* CameraController+ObjectDetections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092F92A84786B00B49BAA /* CameraController+ObjectDetections.swift */; };
+		6A0093012A862A5A00B49BAA /* Botak.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 6A0093002A8629F200B49BAA /* Botak.rcproject */; };
+		6A0093032A863C7D00B49BAA /* CameraController+GhostLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0093022A863C7D00B49BAA /* CameraController+GhostLogic.swift */; };
 		6A24B6CE2A7C11B60056AA03 /* GhostHuntingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A24B6CD2A7C11B60056AA03 /* GhostHuntingApp.swift */; };
 		6A24B6D22A7C11B70056AA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A24B6D12A7C11B70056AA03 /* Assets.xcassets */; };
 		6A24B6D52A7C11B70056AA03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A24B6D42A7C11B70056AA03 /* Preview Assets.xcassets */; };
-		6A40A3682A825EA10083633F /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A3672A825EA10083633F /* CameraController.swift */; };
-		6A40A36A2A825F060083633F /* CameraController+ObjectDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A3692A825F060083633F /* CameraController+ObjectDetection.swift */; };
-		6A40A36C2A825F360083633F /* CameraController+VideoOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A36B2A825F360083633F /* CameraController+VideoOutput.swift */; };
 		6A40A36E2A825F4F0083633F /* ImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A36D2A825F4F0083633F /* ImageOrientation.swift */; };
 		6A40A3702A825F660083633F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A36F2A825F660083633F /* CameraView.swift */; };
-		6A40A3722A825F790083633F /* CameraViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A3712A825F790083633F /* CameraViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A0092EC2A8385EF00B49BAA /* CameraViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewRepresentable.swift; sourceTree = "<group>"; };
+		6A0092EE2A83873100B49BAA /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		6A0092F02A83877F00B49BAA /* CameraController+DelegateSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraController+DelegateSession.swift"; sourceTree = "<group>"; };
+		6A0092F32A83886400B49BAA /* MachineLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearning.swift; sourceTree = "<group>"; };
+		6A0092F92A84786B00B49BAA /* CameraController+ObjectDetections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraController+ObjectDetections.swift"; sourceTree = "<group>"; };
+		6A0093002A8629F200B49BAA /* Botak.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Botak.rcproject; sourceTree = "<group>"; };
+		6A0093022A863C7D00B49BAA /* CameraController+GhostLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraController+GhostLogic.swift"; sourceTree = "<group>"; };
 		6A24B6CA2A7C11B60056AA03 /* GhostHunting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhostHunting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A24B6CD2A7C11B60056AA03 /* GhostHuntingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostHuntingApp.swift; sourceTree = "<group>"; };
 		6A24B6D12A7C11B70056AA03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A24B6D42A7C11B70056AA03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6A40A3672A825EA10083633F /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
-		6A40A3692A825F060083633F /* CameraController+ObjectDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraController+ObjectDetection.swift"; sourceTree = "<group>"; };
-		6A40A36B2A825F360083633F /* CameraController+VideoOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraController+VideoOutput.swift"; sourceTree = "<group>"; };
 		6A40A36D2A825F4F0083633F /* ImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOrientation.swift; sourceTree = "<group>"; };
 		6A40A36F2A825F660083633F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		6A40A3712A825F790083633F /* CameraViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A0092F22A83884600B49BAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A0092F32A83886400B49BAA /* MachineLearning.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6A0092FB2A84C8A100B49BAA /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				6A0093002A8629F200B49BAA /* Botak.rcproject */,
+			);
+			path = Art;
+			sourceTree = "<group>";
+		};
 		6A24B6C12A7C11B60056AA03 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +83,8 @@
 		6A24B6CC2A7C11B60056AA03 /* GhostHunting */ = {
 			isa = PBXGroup;
 			children = (
+				6A0092FB2A84C8A100B49BAA /* Art */,
+				6A0092F22A83884600B49BAA /* Model */,
 				6A40A3662A825E760083633F /* Data */,
 				6A40A3642A825E490083633F /* Enum */,
 				6A40A3632A825E410083633F /* ViewModel */,
@@ -84,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				6A40A36F2A825F660083633F /* CameraView.swift */,
-				6A40A3712A825F790083633F /* CameraViewRepresentable.swift */,
+				6A0092EC2A8385EF00B49BAA /* CameraViewRepresentable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,9 +116,10 @@
 		6A40A3632A825E410083633F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6A40A3672A825EA10083633F /* CameraController.swift */,
-				6A40A3692A825F060083633F /* CameraController+ObjectDetection.swift */,
-				6A40A36B2A825F360083633F /* CameraController+VideoOutput.swift */,
+				6A0092EE2A83873100B49BAA /* CameraController.swift */,
+				6A0092F02A83877F00B49BAA /* CameraController+DelegateSession.swift */,
+				6A0092F92A84786B00B49BAA /* CameraController+ObjectDetections.swift */,
+				6A0093022A863C7D00B49BAA /* CameraController+GhostLogic.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,13 +209,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A40A36A2A825F060083633F /* CameraController+ObjectDetection.swift in Sources */,
-				6A40A36C2A825F360083633F /* CameraController+VideoOutput.swift in Sources */,
-				6A40A3682A825EA10083633F /* CameraController.swift in Sources */,
+				6A0092EF2A83873100B49BAA /* CameraController.swift in Sources */,
+				6A0093032A863C7D00B49BAA /* CameraController+GhostLogic.swift in Sources */,
 				6A40A3702A825F660083633F /* CameraView.swift in Sources */,
 				6A40A36E2A825F4F0083633F /* ImageOrientation.swift in Sources */,
-				6A40A3722A825F790083633F /* CameraViewRepresentable.swift in Sources */,
 				6A24B6CE2A7C11B60056AA03 /* GhostHuntingApp.swift in Sources */,
+				6A0092FA2A84786B00B49BAA /* CameraController+ObjectDetections.swift in Sources */,
+				6A0093012A862A5A00B49BAA /* Botak.rcproject in Sources */,
+				6A0092F42A83886400B49BAA /* MachineLearning.swift in Sources */,
+				6A0092F12A83877F00B49BAA /* CameraController+DelegateSession.swift in Sources */,
+				6A0092ED2A8385EF00B49BAA /* CameraViewRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +350,7 @@
 				DEVELOPMENT_TEAM = 9CPQ5HZ2TL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "using camera for identifying with camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,6 +380,7 @@
 				DEVELOPMENT_TEAM = 9CPQ5HZ2TL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "using camera for identifying with camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

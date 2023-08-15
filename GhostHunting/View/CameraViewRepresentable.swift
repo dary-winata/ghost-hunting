@@ -2,22 +2,27 @@
 //  CameraViewRepresentable.swift
 //  GhostHunting
 //
-//  Created by dary winata nugraha djati on 08/08/23.
+//  Created by dary winata nugraha djati on 09/08/23.
 //
 
+import ARKit
 import SwiftUI
+import RealityKit
 
-struct CameraViewRepresentable : UIViewControllerRepresentable {
+struct CameraViewRepresentable: UIViewRepresentable {
     
-    let cameraController = CameraController()
-    
-    func makeUIViewController(context: Context) -> UIViewController {
+    var cameraController : CameraController = CameraController()
+
+    func makeUIView(context: Context) -> ARView {        
         return cameraController
     }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        
+
+    func updateUIView(_ uiView: ARView, context: Context) {
+
     }
     
-    typealias UIViewControllerType = UIViewController
+    
+    typealias UIViewType = ARView
 }
+
+
