@@ -9,16 +9,21 @@ import RealityKit
 import ARKit
 import CoreML
 import UIKit
+import AVFAudio
 
 class CameraController : ARView {
     
     var requestObjectDetection : VNRequest = VNRequest()
+    var lightningSpotlight : SpotLight = SpotLight()
+    var currentGhost: Entity = Entity()
+    var ghostYawRotation : Float = 0.0
     var screenSize : CGRect = CGRect()
-    var ghostPoint : CGPoint?
-    var ghostTimer : Int = 0
+    var ghostTimer : Timer = Timer()
+    var ghostWalkCount : Int = 0
     var isGhostRendered = false
+    var ghostPoint : CGPoint?
+    var ghostCount : Int = 0
     var timerCount : Int = 0
-    var currentGhost: ModelEntity = ModelEntity()
     
     var dataModel : MLModel = {
         do {
@@ -44,22 +49,22 @@ class CameraController : ARView {
                 
         setupModelSession()
         
-        runTimerGhostApper()
+//        runTimerGhostApper()
         
         self.session.delegate = self
-
-        self.environment.sceneUnderstanding.options = []
-        
-        self.environment.sceneUnderstanding.options.insert(.occlusion)
-        self.environment.sceneUnderstanding.options.insert(.physics)
-        self.renderOptions = [.disablePersonOcclusion, .disableDepthOfField, .disableMotionBlur]
-        
-        self.automaticallyConfigureSession = false
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.sceneReconstruction = .meshWithClassification
-
-        configuration.environmentTexturing = .automatic
-        self.session.run(configuration)
+//
+//        self.environment.sceneUnderstanding.options = []
+//
+//        self.environment.sceneUnderstanding.options.insert(.occlusion)
+//        self.environment.sceneUnderstanding.options.insert(.physics)
+//        self.renderOptions = [.disablePersonOcclusion, .disableDepthOfField, .disableMotionBlur]
+//
+//        self.automaticallyConfigureSession = false
+//        let configuration = ARWorldTrackingConfiguration()
+//        configuration.sceneReconstruction = .meshWithClassification
+//
+//        configuration.environmentTexturing = .automatic
+//        self.session.run(configuration)
     }
     
     func convertRealCoordinateToWorld() {
@@ -73,18 +78,50 @@ class CameraController : ARView {
     
     func createGhost(_ raycast: ARRaycastResult) {
         let anchorEntity = AnchorEntity(world: raycast.worldTransform)
+        guard let ghostPath = Bundle.main.url(forResource: "Wraith", withExtension: "usdz") else {return}
         isGhostRendered = true
         DispatchQueue.main.async {
             do  {
-                let entity = try Botak.loadHantu()
-                self.currentGhost = entity.findEntity(named: "Cube") as! ModelEntity
-                self.currentGhost.transform = Transform(yaw: .pi)
+                self.currentGhost = try Entity.load(contentsOf: ghostPath)
+                self.ghostYawRotation = .pi
+                self.currentGhost.transform = Transform(yaw: self.ghostYawRotation)
+                self.currentGhost.position = SIMD3<Float>(x: self.currentGhost.position.x,
+                                                          y: self.currentGhost.position.y,
+                                                          z: self.currentGhost.position.z - 4)
                 self.currentGhost.scale *= 0.1
                 anchorEntity.addChild(self.currentGhost)
+                self.currentGhost.availableAnimations.forEach {
+                    self.currentGhost.playAnimation($0.repeat())
+                }
+
                 self.scene.addAnchor(anchorEntity)
+
+                let audioGhost = try AudioFileResource.load(named: "WRAITH.mp3", inputMode: .spatial, loadingStrategy: .preload, shouldLoop: true)
+            
+                let audioPlayback = self.currentGhost.prepareAudio(audioGhost)
+                audioPlayback.gain = 90
+                audioPlayback.play()
             } catch {
                 print(error.localizedDescription)
             }
         }
     }
+    
+    func isGhostVisible() {
+        guard let point = self.project(currentGhost.position) else {return}
+        if self.bounds.contains(point) {
+            print("visible")
+        } else {
+            print("not visible")
+        }
+    }
+    
+//    func lightningSetup() {
+//        lightningSpotlight.light.color = .yellow
+//        lightningSpotlight.light.intensity = 1000000
+//        lightningSpotlight.light.innerAngleInDegrees = 40
+//        lightningSpotlight.light.attenuationRadius = 10
+//        lightningSpotlight.light.outerAngleInDegrees = 60
+//        lightningSpotlight.shadow = SpotLightComponent.Shadow()
+//    }
 }

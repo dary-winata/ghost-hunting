@@ -30,8 +30,8 @@
             filePath = "GhostHunting/ViewModel/CameraController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "CameraController"
             landmarkType = "3">
          </BreakpointContent>
@@ -46,10 +46,185 @@
             filePath = "GhostHunting/ViewModel/CameraController+ObjectDetections.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "didFinishHandling(_:error:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E52F8A36-78D6-4EBE-A47A-316E7D9F3373"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GhostHunting/ViewModel/CameraController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "createGhost(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E52F8A36-78D6-4EBE-A47A-316E7D9F3373 - e29f1de819496d80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GhostHunting.CameraController.createGhost(__C.ARRaycastResult) -&gt; ()"
+                  moduleName = "GhostHunting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darywinata/Documents/tugas/GhostHunting/GhostHunting/ViewModel/CameraController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "E52F8A36-78D6-4EBE-A47A-316E7D9F3373 - e29f1de819496de3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GhostHunting.CameraController.createGhost(__C.ARRaycastResult) -&gt; ()"
+                  moduleName = "GhostHunting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darywinata/Documents/tugas/GhostHunting/GhostHunting/ViewModel/CameraController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FF85870C-536E-4A55-9EFE-699787A843A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GhostHunting/ViewModel/CameraController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "createGhost(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FF85870C-536E-4A55-9EFE-699787A843A3 - b4c1be5cce7958e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostHunting.CameraController.createGhost(__C.ARRaycastResult) -&gt; ()"
+                  moduleName = "GhostHunting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darywinata/Documents/tugas/GhostHunting/GhostHunting/ViewModel/CameraController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "788">
+               </Location>
+               <Location
+                  uuid = "FF85870C-536E-4A55-9EFE-699787A843A3 - b4c1be5cce7958e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostHunting.CameraController.createGhost(__C.ARRaycastResult) -&gt; ()"
+                  moduleName = "GhostHunting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darywinata/Documents/tugas/GhostHunting/GhostHunting/ViewModel/CameraController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "2692">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A17598F-96F2-49D2-8AE9-74C76189022D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GhostHunting/ViewModel/CameraController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "createGhost(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B2378EA-2A9F-4389-B485-1433548B58C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GhostHunting/ViewModel/CameraController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "createGhost(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3B2378EA-2A9F-4389-B485-1433548B58C8 - b4c1be5cce7958c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostHunting.CameraController.createGhost(__C.ARRaycastResult) -&gt; ()"
+                  moduleName = "GhostHunting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darywinata/Documents/tugas/GhostHunting/GhostHunting/ViewModel/CameraController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+               <Location
+                  uuid = "3B2378EA-2A9F-4389-B485-1433548B58C8 - b4c1be5cce7958c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostHunting.CameraController.createGhost(__C.ARRaycastResult) -&gt; ()"
+                  moduleName = "GhostHunting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darywinata/Documents/tugas/GhostHunting/GhostHunting/ViewModel/CameraController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "2640">
+               </Location>
+               <Location
+                  uuid = "3B2378EA-2A9F-4389-B485-1433548B58C8 - b4c1be5cce795884"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostHunting.CameraController.createGhost(__C.ARRaycastResult) -&gt; ()"
+                  moduleName = "GhostHunting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darywinata/Documents/tugas/GhostHunting/GhostHunting/ViewModel/CameraController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1104">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

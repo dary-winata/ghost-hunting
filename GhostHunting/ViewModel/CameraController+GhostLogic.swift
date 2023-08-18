@@ -9,7 +9,7 @@ import Foundation
 
 extension CameraController {
     func runTimerGhostApper() {
-        ghostTimer = Int.random(in: 15..<76)
+        ghostCount = Int.random(in: 15..<76)
         
         timerCount = 0
         
@@ -17,18 +17,13 @@ extension CameraController {
     }
     
     @objc func timerGhostApper(timer: Timer) {
-        if timerCount == ghostTimer {
+        if timerCount == ghostCount {
             isGhostRendered = false
-            runTimerGhostApper()
-            timerCount = 0
+            timer.invalidate()
         }
         
         if isGhostRendered {
             timerCount += 1
         }
-    }
-    
-    func runGhostWalking() {
-        if 
     }
 }

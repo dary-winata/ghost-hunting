@@ -22,7 +22,6 @@ extension CameraController {
         
         switch UIDevice.current.orientation {
         case .portrait:
-            print("sedang portrait")
             orientation = ImageOrientation.portrait.rawValue
         case .landscapeLeft:
             orientation = ImageOrientation.landscapeLeft.rawValue

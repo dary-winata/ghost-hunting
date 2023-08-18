@@ -9,7 +9,28 @@ import SwiftUI
 
 struct CameraView: View {
     var body: some View {
-        CameraViewRepresentable().ignoresSafeArea()
+        GeometryReader { screenSize in
+            ZStack {
+                CameraViewRepresentable().ignoresSafeArea()
+                VStack {
+                    Spacer()
+                    Button {
+                        
+                    } label: {
+                        Circle()
+                            .stroke(Color.gray, lineWidth: 2)
+                            .frame(width: 120, height: 120)
+                            .foregroundColor(.clear)
+                            .overlay {
+                                Circle()
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor(.gray)
+                            }
+                    }
+                    
+                }
+            }
+        }
     }
 }
 
