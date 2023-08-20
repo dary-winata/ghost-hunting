@@ -8,26 +8,46 @@
 import SwiftUI
 
 struct CameraView: View {
+    var cameraRepresentable : CameraViewRepresentable = CameraViewRepresentable()
+    
     var body: some View {
         GeometryReader { screenSize in
             ZStack {
-                CameraViewRepresentable().ignoresSafeArea()
-                VStack {
-                    Spacer()
-                    Button {
-                        
-                    } label: {
-                        Circle()
-                            .stroke(Color.gray, lineWidth: 2)
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.clear)
-                            .overlay {
-                                Circle()
-                                    .frame(width: 100, height: 100)
-                                    .foregroundColor(.gray)
-                            }
+                cameraRepresentable.ignoresSafeArea()
+                if screenSize.size.width < screenSize.size.height {
+                    VStack {
+                        Spacer()
+                        Button {
+                            cameraRepresentable.pickPhotoGhost()
+                        } label: {
+                            Circle()
+                                .stroke(Color.gray, lineWidth: 2)
+                                .frame(width: 100, height: 100)
+                                .foregroundColor(.clear)
+                                .overlay {
+                                    Circle()
+                                        .frame(width: 80, height: 80)
+                                        .foregroundColor(.gray)
+                                }
+                        }
                     }
-                    
+                } else {
+                    HStack {
+                        Spacer()
+                        Button {
+                            cameraRepresentable.pickPhotoGhost()
+                        } label: {
+                            Circle()
+                                .stroke(Color.gray, lineWidth: 2)
+                                .frame(width: 100, height: 100)
+                                .foregroundColor(.clear)
+                                .overlay {
+                                    Circle()
+                                        .frame(width: 80, height: 80)
+                                        .foregroundColor(.gray)
+                                }
+                        }
+                    }
                 }
             }
         }

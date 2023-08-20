@@ -8,12 +8,17 @@
 import ARKit
 import SwiftUI
 import RealityKit
+import Combine
 
 struct CameraViewRepresentable: UIViewRepresentable {
     
-    var cameraController : CameraController = CameraController()
+    private var cameraController : CameraController = CameraController()
+    var cancellable = Set<AnyCancellable>()
+    var isGhostCaptured : Bool = false
 
-    func makeUIView(context: Context) -> ARView {        
+    func makeUIView(context: Context) -> ARView {
+        bindingCameraVariable()
+        
         return cameraController
     }
 
@@ -21,6 +26,13 @@ struct CameraViewRepresentable: UIViewRepresentable {
 
     }
     
+    func bindingCameraVariable() {
+//        cameraController.$isCaptured.assign(to: \.isGhostCaptured, on: self)
+    }
+    
+    func pickPhotoGhost() {
+        cameraController.takeAPic()
+    }
     
     typealias UIViewType = ARView
 }

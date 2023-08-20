@@ -14,8 +14,8 @@ import AVFAudio
 class CameraController : ARView {
     
     var requestObjectDetection : VNRequest = VNRequest()
-    var lightningSpotlight : SpotLight = SpotLight()
     var currentGhost: Entity = Entity()
+    var currentGhostName: String = ""
     var ghostYawRotation : Float = 0.0
     var screenSize : CGRect = CGRect()
     var ghostTimer : Timer = Timer()
@@ -24,6 +24,7 @@ class CameraController : ARView {
     var ghostPoint : CGPoint?
     var ghostCount : Int = 0
     var timerCount : Int = 0
+    @Published var isCaptured : Bool = false
     
     var dataModel : MLModel = {
         do {
@@ -52,19 +53,19 @@ class CameraController : ARView {
 //        runTimerGhostApper()
         
         self.session.delegate = self
-//
-//        self.environment.sceneUnderstanding.options = []
-//
-//        self.environment.sceneUnderstanding.options.insert(.occlusion)
-//        self.environment.sceneUnderstanding.options.insert(.physics)
-//        self.renderOptions = [.disablePersonOcclusion, .disableDepthOfField, .disableMotionBlur]
-//
-//        self.automaticallyConfigureSession = false
-//        let configuration = ARWorldTrackingConfiguration()
-//        configuration.sceneReconstruction = .meshWithClassification
-//
-//        configuration.environmentTexturing = .automatic
-//        self.session.run(configuration)
+
+        self.environment.sceneUnderstanding.options = []
+
+        self.environment.sceneUnderstanding.options.insert(.occlusion)
+        self.environment.sceneUnderstanding.options.insert(.physics)
+        self.renderOptions = [.disablePersonOcclusion, .disableDepthOfField, .disableMotionBlur]
+
+        self.automaticallyConfigureSession = false
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.sceneReconstruction = .meshWithClassification
+
+        configuration.environmentTexturing = .automatic
+        self.session.run(configuration)
     }
     
     func convertRealCoordinateToWorld() {
@@ -78,16 +79,22 @@ class CameraController : ARView {
     
     func createGhost(_ raycast: ARRaycastResult) {
         let anchorEntity = AnchorEntity(world: raycast.worldTransform)
-        guard let ghostPath = Bundle.main.url(forResource: "Wraith", withExtension: "usdz") else {return}
+        if Int.random(in: 1...2) == 1 {
+            currentGhostName = "Wraith"
+        } else {
+            currentGhostName = "Banshee"
+        }
+        guard let ghostPath = Bundle.main.url(forResource: currentGhostName, withExtension: "usdz") else {return}
         isGhostRendered = true
         DispatchQueue.main.async {
             do  {
                 self.currentGhost = try Entity.load(contentsOf: ghostPath)
                 self.ghostYawRotation = .pi
                 self.currentGhost.transform = Transform(yaw: self.ghostYawRotation)
+                let randomPosition = Int.random(in: 1...2)
                 self.currentGhost.position = SIMD3<Float>(x: self.currentGhost.position.x,
                                                           y: self.currentGhost.position.y,
-                                                          z: self.currentGhost.position.z - 4)
+                                                          z: randomPosition == 1 ? self.currentGhost.position.z - 10 : self.currentGhost.position.z + 10)
                 self.currentGhost.scale *= 0.1
                 anchorEntity.addChild(self.currentGhost)
                 self.currentGhost.availableAnimations.forEach {
@@ -96,10 +103,10 @@ class CameraController : ARView {
 
                 self.scene.addAnchor(anchorEntity)
 
-                let audioGhost = try AudioFileResource.load(named: "WRAITH.mp3", inputMode: .spatial, loadingStrategy: .preload, shouldLoop: true)
+                let audioGhost = try AudioFileResource.load(named: "\(self.currentGhostName).mp3", inputMode: .spatial, loadingStrategy: .preload, shouldLoop: true)
             
                 let audioPlayback = self.currentGhost.prepareAudio(audioGhost)
-                audioPlayback.gain = 90
+                audioPlayback.gain = 100
                 audioPlayback.play()
             } catch {
                 print(error.localizedDescription)
@@ -109,11 +116,15 @@ class CameraController : ARView {
     
     func isGhostVisible() {
         guard let point = self.project(currentGhost.position) else {return}
-        if self.bounds.contains(point) {
+        if self.bounds.contains(point) && currentGhost.position.z < 0 {
             print("visible")
         } else {
             print("not visible")
         }
+    }
+    
+    func takeAPic() {
+        isCaptured = true
     }
     
 //    func lightningSetup() {
