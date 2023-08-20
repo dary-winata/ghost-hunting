@@ -32,6 +32,9 @@ extension CameraController: ARSessionDelegate {
                                                  y: yPosition,
                                                  z: zPosition)
             isGhostVisible()
+            let value = currentGhost.position.z.distance(to: frame.camera.transform[3].z)
+            audioPlayback?.gain = 10 / abs(Double(value))
+//            print(abs(Double(value)))
         }
     }
 }

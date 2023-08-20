@@ -14,6 +14,7 @@ import AVFAudio
 class CameraController : ARView {
     
     var requestObjectDetection : VNRequest = VNRequest()
+    var audioPlayback : AudioPlaybackController?
     var currentGhost: Entity = Entity()
     var currentGhostName: String = ""
     var ghostYawRotation : Float = 0.0
@@ -54,18 +55,18 @@ class CameraController : ARView {
         
         self.session.delegate = self
 
-        self.environment.sceneUnderstanding.options = []
-
-        self.environment.sceneUnderstanding.options.insert(.occlusion)
-        self.environment.sceneUnderstanding.options.insert(.physics)
-        self.renderOptions = [.disablePersonOcclusion, .disableDepthOfField, .disableMotionBlur]
-
-        self.automaticallyConfigureSession = false
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.sceneReconstruction = .meshWithClassification
-
-        configuration.environmentTexturing = .automatic
-        self.session.run(configuration)
+//        self.environment.sceneUnderstanding.options = []
+//
+//        self.environment.sceneUnderstanding.options.insert(.occlusion)
+//        self.environment.sceneUnderstanding.options.insert(.physics)
+//        self.renderOptions = [.disablePersonOcclusion, .disableDepthOfField, .disableMotionBlur]
+//
+//        self.automaticallyConfigureSession = false
+//        let configuration = ARWorldTrackingConfiguration()
+//        configuration.sceneReconstruction = .meshWithClassification
+//
+//        configuration.environmentTexturing = .automatic
+//        self.session.run(configuration)
     }
     
     func convertRealCoordinateToWorld() {
@@ -93,8 +94,8 @@ class CameraController : ARView {
                 self.currentGhost.transform = Transform(yaw: self.ghostYawRotation)
                 let randomPosition = Int.random(in: 1...2)
                 self.currentGhost.position = SIMD3<Float>(x: self.currentGhost.position.x,
-                                                          y: self.currentGhost.position.y,
-                                                          z: randomPosition == 1 ? self.currentGhost.position.z - 10 : self.currentGhost.position.z + 10)
+                                                          y: randomPosition == 1 ? self.currentGhost.position.y : self.currentGhost.position.y - 5,
+                                                          z: randomPosition == 1 ? self.currentGhost.position.z - 15 : self.currentGhost.position.z + 15)
                 self.currentGhost.scale *= 0.1
                 anchorEntity.addChild(self.currentGhost)
                 self.currentGhost.availableAnimations.forEach {
@@ -105,9 +106,9 @@ class CameraController : ARView {
 
                 let audioGhost = try AudioFileResource.load(named: "\(self.currentGhostName).mp3", inputMode: .spatial, loadingStrategy: .preload, shouldLoop: true)
             
-                let audioPlayback = self.currentGhost.prepareAudio(audioGhost)
-                audioPlayback.gain = 100
-                audioPlayback.play()
+                self.audioPlayback = self.currentGhost.prepareAudio(audioGhost)
+//                self.audioPlayback?.gain = 100
+                self.audioPlayback?.play()
             } catch {
                 print(error.localizedDescription)
             }
