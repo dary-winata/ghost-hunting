@@ -12,9 +12,9 @@ import Combine
 
 struct CameraViewRepresentable: UIViewRepresentable {
     
-    private var cameraController : CameraController = CameraController()
+    var cameraController : CameraController = CameraController()
     var cancellable = Set<AnyCancellable>()
-    var isGhostCaptured : Bool = false
+    @State var isGhostCaptured : Bool = false
 
     func makeUIView(context: Context) -> ARView {
         bindingCameraVariable()
@@ -27,7 +27,14 @@ struct CameraViewRepresentable: UIViewRepresentable {
     }
     
     func bindingCameraVariable() {
-//        cameraController.$isCaptured.assign(to: \.isGhostCaptured, on: self)
+        let _ = cameraController
+            .publisher(for: \.isCaptured)
+            .sink { newValue in
+//                isGhostCaptured = newValue
+                print("new :", newValue)
+            } receiveValue: { value in
+                print("get value : ", value)
+            }
     }
     
     func pickPhotoGhost() {

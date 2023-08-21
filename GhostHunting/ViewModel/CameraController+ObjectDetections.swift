@@ -16,7 +16,7 @@ extension CameraController {
         
         self.requestObjectDetection = recognition
     }
-
+    
     func handlerForModel(_ imageBuffer : CVImageBuffer) {
         var orientation : UInt32 = 0
         
@@ -48,16 +48,17 @@ extension CameraController {
         
         if isGhostRendered == false {
             for observation in request.results! where observation is VNRecognizedObjectObservation {
+                
                 guard let objectObservation  = observation as? VNRecognizedObjectObservation else {return}
-                if listObject.contains(objectObservation.labels.first?.identifier ?? "") {
+//                if listObject.contains(objectObservation.labels.first?.identifier ?? "") {
                     let objectBound = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(self.screenSize.width), Int(self.screenSize.height))
                     
                     let midPointX = (abs(objectBound.minX-objectBound.maxX)/2) + objectBound.minX
                     let midPointY = (abs(objectBound.minY-objectBound.maxY)/2) + objectBound.minY
                     
-                    ghostPoint = CGPoint(x: midPointX, y: midPointY)
-                    convertRealCoordinateToWorld()
-                }
+                    self.ghostPoint = CGPoint(x: midPointX, y: midPointY)
+                    self.convertRealCoordinateToWorld()
+//                }
             }
         }
         

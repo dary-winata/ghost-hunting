@@ -16,6 +16,10 @@
 		6A24B6D22A7C11B70056AA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A24B6D12A7C11B70056AA03 /* Assets.xcassets */; };
 		6A24B6D52A7C11B70056AA03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A24B6D42A7C11B70056AA03 /* Preview Assets.xcassets */; };
 		6A370E762A90E3E300C94600 /* Banshee.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E752A90E3E300C94600 /* Banshee.usdz */; };
+		6A370E7E2A922C4700C94600 /* Blood.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E7B2A922C4700C94600 /* Blood.usdz */; };
+		6A370E7F2A922C4700C94600 /* Bone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E7C2A922C4700C94600 /* Bone.usdz */; };
+		6A370E802A922C4700C94600 /* Skull.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E7D2A922C4700C94600 /* Skull.usdz */; };
+		6A370E822A92E78900C94600 /* CameraBgSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E812A92E78900C94600 /* CameraBgSound.mp3 */; };
 		6A40A36E2A825F4F0083633F /* ImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A36D2A825F4F0083633F /* ImageOrientation.swift */; };
 		6A40A3702A825F660083633F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A36F2A825F660083633F /* CameraView.swift */; };
 		6A5B57F92A906C2A00C94236 /* GhostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5B57F82A906C2A00C94236 /* GhostModel.swift */; };
@@ -35,6 +39,10 @@
 		6A24B6D12A7C11B70056AA03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A24B6D42A7C11B70056AA03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6A370E752A90E3E300C94600 /* Banshee.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Banshee.usdz; sourceTree = "<group>"; };
+		6A370E7B2A922C4700C94600 /* Blood.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Blood.usdz; sourceTree = "<group>"; };
+		6A370E7C2A922C4700C94600 /* Bone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bone.usdz; sourceTree = "<group>"; };
+		6A370E7D2A922C4700C94600 /* Skull.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Skull.usdz; sourceTree = "<group>"; };
+		6A370E812A92E78900C94600 /* CameraBgSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CameraBgSound.mp3; sourceTree = "<group>"; };
 		6A40A36D2A825F4F0083633F /* ImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOrientation.swift; sourceTree = "<group>"; };
 		6A40A36F2A825F660083633F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		6A5B57F82A906C2A00C94236 /* GhostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostModel.swift; sourceTree = "<group>"; };
@@ -66,6 +74,9 @@
 		6A0092FB2A84C8A100B49BAA /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				6A370E7B2A922C4700C94600 /* Blood.usdz */,
+				6A370E7C2A922C4700C94600 /* Bone.usdz */,
+				6A370E7D2A922C4700C94600 /* Skull.usdz */,
 				6A370E752A90E3E300C94600 /* Banshee.usdz */,
 				6AAD157E2A8CA9FC002B63F2 /* Wraith.usdz */,
 			);
@@ -152,6 +163,7 @@
 		6AAD15802A8CBF7F002B63F2 /* Sfx */ = {
 			isa = PBXGroup;
 			children = (
+				6A370E812A92E78900C94600 /* CameraBgSound.mp3 */,
 				6AAD158F2A8FB9CA002B63F2 /* Banshee.mp3 */,
 				6AAD15832A8CC4CF002B63F2 /* Wraith.mp3 */,
 			);
@@ -217,10 +229,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A24B6D52A7C11B70056AA03 /* Preview Assets.xcassets in Resources */,
+				6A370E822A92E78900C94600 /* CameraBgSound.mp3 in Resources */,
 				6A24B6D22A7C11B70056AA03 /* Assets.xcassets in Resources */,
 				6A370E762A90E3E300C94600 /* Banshee.usdz in Resources */,
+				6A370E7E2A922C4700C94600 /* Blood.usdz in Resources */,
+				6A370E7F2A922C4700C94600 /* Bone.usdz in Resources */,
 				6AAD157F2A8CA9FC002B63F2 /* Wraith.usdz in Resources */,
 				6AAD15842A8CC4CF002B63F2 /* Wraith.mp3 in Resources */,
+				6A370E802A922C4700C94600 /* Skull.usdz in Resources */,
 				6AAD15902A8FB9CA002B63F2 /* Banshee.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +389,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GhostHunting/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pantopix;
 				INFOPLIST_KEY_NSCameraUsageDescription = "using camera for identifying with camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -405,6 +422,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GhostHunting/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pantopix;
 				INFOPLIST_KEY_NSCameraUsageDescription = "using camera for identifying with camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -26,4 +26,22 @@ extension CameraController {
             timerCount += 1
         }
     }
+    
+    func runTimerSurroundObject() {
+        objectCount = Int.random(in: 15..<35)
+        
+        objectTimerCount = 0
+        
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerSurroundObject), userInfo: nil, repeats: true)
+    }
+    
+    @objc func timerSurroundObject(timer: Timer) {
+        if objectTimerCount == objectCount {
+            randomObjectPlacement()
+            objectCount = Int.random(in: 15..<35)
+            objectTimerCount = 0
+        }
+        
+        objectTimerCount += 1
+    }
 }

@@ -13,19 +13,24 @@ import AVFAudio
 
 class CameraController : ARView {
     
+    @objc dynamic var isCaptured : Bool = false
+    
     var requestObjectDetection : VNRequest = VNRequest()
     var audioPlayback : AudioPlaybackController?
+    var anchorGhost : AnchorEntity = AnchorEntity()
+    var anchorCamera: AnchorEntity = AnchorEntity()
     var currentGhost: Entity = Entity()
-    var currentGhostName: String = ""
-    var ghostYawRotation : Float = 0.0
     var screenSize : CGRect = CGRect()
     var ghostTimer : Timer = Timer()
+    var ghostYawRotation : Float = 0.0
+    var currentGhostName: String = ""
+    var objectTimerCount : Int = 0
     var ghostWalkCount : Int = 0
     var isGhostRendered = false
     var ghostPoint : CGPoint?
     var ghostCount : Int = 0
     var timerCount : Int = 0
-    @Published var isCaptured : Bool = false
+    var objectCount: Int = 0
     
     var dataModel : MLModel = {
         do {
@@ -51,7 +56,7 @@ class CameraController : ARView {
                 
         setupModelSession()
         
-//        runTimerGhostApper()
+        runTimerSurroundObject()
         
         self.session.delegate = self
 
@@ -67,6 +72,11 @@ class CameraController : ARView {
 //
 //        configuration.environmentTexturing = .automatic
 //        self.session.run(configuration)
+        
+        anchorCamera = AnchorEntity(.camera)
+        self.scene.addAnchor(anchorCamera)
+        
+        playCameraAudio()
     }
     
     func convertRealCoordinateToWorld() {
@@ -79,7 +89,7 @@ class CameraController : ARView {
     }
     
     func createGhost(_ raycast: ARRaycastResult) {
-        let anchorEntity = AnchorEntity(world: raycast.worldTransform)
+        anchorGhost = AnchorEntity(world: raycast.worldTransform)
         if Int.random(in: 1...2) == 1 {
             currentGhostName = "Wraith"
         } else {
@@ -87,27 +97,29 @@ class CameraController : ARView {
         }
         guard let ghostPath = Bundle.main.url(forResource: currentGhostName, withExtension: "usdz") else {return}
         isGhostRendered = true
+        
         DispatchQueue.main.async {
             do  {
                 self.currentGhost = try Entity.load(contentsOf: ghostPath)
-                self.ghostYawRotation = .pi
-                self.currentGhost.transform = Transform(yaw: self.ghostYawRotation)
+                if self.currentGhostName == "Wraith" {
+                    self.ghostYawRotation = .pi
+                    self.currentGhost.transform = Transform(yaw: self.ghostYawRotation)
+                }
                 let randomPosition = Int.random(in: 1...2)
                 self.currentGhost.position = SIMD3<Float>(x: self.currentGhost.position.x,
-                                                          y: randomPosition == 1 ? self.currentGhost.position.y : self.currentGhost.position.y - 5,
+                                                          y: self.currentGhostName == "Wraith" ? self.currentGhost.position.y - 3 : self.currentGhost.position.y,
                                                           z: randomPosition == 1 ? self.currentGhost.position.z - 15 : self.currentGhost.position.z + 15)
                 self.currentGhost.scale *= 0.1
-                anchorEntity.addChild(self.currentGhost)
+                self.anchorGhost.addChild(self.currentGhost)
                 self.currentGhost.availableAnimations.forEach {
                     self.currentGhost.playAnimation($0.repeat())
                 }
 
-                self.scene.addAnchor(anchorEntity)
+                self.scene.addAnchor(self.anchorGhost)
 
                 let audioGhost = try AudioFileResource.load(named: "\(self.currentGhostName).mp3", inputMode: .spatial, loadingStrategy: .preload, shouldLoop: true)
             
                 self.audioPlayback = self.currentGhost.prepareAudio(audioGhost)
-//                self.audioPlayback?.gain = 100
                 self.audioPlayback?.play()
             } catch {
                 print(error.localizedDescription)
@@ -115,25 +127,64 @@ class CameraController : ARView {
         }
     }
     
-    func isGhostVisible() {
-        guard let point = self.project(currentGhost.position) else {return}
-        if self.bounds.contains(point) && currentGhost.position.z < 0 {
-            print("visible")
+    func isGhostVisible() -> Bool {
+        guard let point = self.project(currentGhost.position) else {
+            print("point not found")
+            
+            return false
+        }
+        
+        if self.bounds.contains(point) {
+            return true
         } else {
-            print("not visible")
+            return false
         }
     }
     
     func takeAPic() {
-        isCaptured = true
+        if isGhostVisible() {
+            isCaptured = true
+            self.scene.removeAnchor(anchorGhost)
+            runTimerGhostApper()
+        }
     }
     
-//    func lightningSetup() {
-//        lightningSpotlight.light.color = .yellow
-//        lightningSpotlight.light.intensity = 1000000
-//        lightningSpotlight.light.innerAngleInDegrees = 40
-//        lightningSpotlight.light.attenuationRadius = 10
-//        lightningSpotlight.light.outerAngleInDegrees = 60
-//        lightningSpotlight.shadow = SpotLightComponent.Shadow()
-//    }
+    func randomObjectPlacement() {
+        let anchorEntity = AnchorEntity(plane: .horizontal)
+        var objectName = ""
+        switch Int.random(in: 1...3) {
+        case 1:
+            objectName = "Blood"
+        case 2:
+            objectName = "Bone"
+        default:
+            objectName = "Skull"
+        }
+        
+        guard let ghostPath = Bundle.main.url(forResource: objectName, withExtension: "usdz") else {return}
+        
+        DispatchQueue.main.async {
+            do  {
+                let entity = try Entity.load(contentsOf: ghostPath)
+                entity.scale *= 0.08
+                anchorEntity.addChild(entity)
+
+                self.scene.addAnchor(anchorEntity)
+
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func playCameraAudio() {
+        guard let bgAudioUrl = Bundle.main.url(forResource: "CameraBgSound", withExtension: "mp3") else {return}
+        do {
+            let bgAudio = try AVAudioPlayer(contentsOf: bgAudioUrl)
+            bgAudio.volume = 1.0
+            bgAudio.play()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
