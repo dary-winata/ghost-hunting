@@ -2,8 +2,7 @@
 //  CameraView.swift
 //  GhostHunting
 //
-//  Created by dary winata nugraha djati on 08/08/23.
-//
+//  Created by dary winata nugraha djati on 22/08/23.
 
 import SwiftUI
 
