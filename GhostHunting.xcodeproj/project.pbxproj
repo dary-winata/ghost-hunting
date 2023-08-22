@@ -7,23 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0092ED2A8385EF00B49BAA /* CameraViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092EC2A8385EF00B49BAA /* CameraViewRepresentable.swift */; };
+		6A0092EF2A83873100B49BAA /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092EE2A83873100B49BAA /* CameraController.swift */; };
+		6A0092F12A83877F00B49BAA /* CameraController+DelegateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092F02A83877F00B49BAA /* CameraController+DelegateSession.swift */; };
+		6A0092FA2A84786B00B49BAA /* CameraController+ObjectDetections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0092F92A84786B00B49BAA /* CameraController+ObjectDetections.swift */; };
+		6A0093032A863C7D00B49BAA /* CameraController+GhostLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0093022A863C7D00B49BAA /* CameraController+GhostLogic.swift */; };
 		6A24B6CE2A7C11B60056AA03 /* GhostHuntingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A24B6CD2A7C11B60056AA03 /* GhostHuntingApp.swift */; };
 		6A24B6D22A7C11B70056AA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A24B6D12A7C11B70056AA03 /* Assets.xcassets */; };
 		6A24B6D52A7C11B70056AA03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A24B6D42A7C11B70056AA03 /* Preview Assets.xcassets */; };
 		6A370E862A93BEDC00C94600 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A370E852A93BEDC00C94600 /* HomeView.swift */; };
-		6A370E8A2A93EBFD00C94600 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A370E892A93EBFD00C94600 /* CameraView.swift */; };
+		6A370E762A90E3E300C94600 /* Banshee.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E752A90E3E300C94600 /* Banshee.usdz */; };
+		6A370E7E2A922C4700C94600 /* Blood.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E7B2A922C4700C94600 /* Blood.usdz */; };
+		6A370E7F2A922C4700C94600 /* Bone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E7C2A922C4700C94600 /* Bone.usdz */; };
+		6A370E802A922C4700C94600 /* Skull.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E7D2A922C4700C94600 /* Skull.usdz */; };
+		6A370E822A92E78900C94600 /* CameraBgSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A370E812A92E78900C94600 /* CameraBgSound.mp3 */; };
+		6A40A36E2A825F4F0083633F /* ImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A36D2A825F4F0083633F /* ImageOrientation.swift */; };
+		6A40A3702A825F660083633F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A36F2A825F660083633F /* CameraView.swift */; };
+		6A5B57F92A906C2A00C94236 /* GhostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5B57F82A906C2A00C94236 /* GhostModel.swift */; };
+		6AAD157F2A8CA9FC002B63F2 /* Wraith.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD157E2A8CA9FC002B63F2 /* Wraith.usdz */; };
+		6AAD15842A8CC4CF002B63F2 /* Wraith.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD15832A8CC4CF002B63F2 /* Wraith.mp3 */; };
+		6AAD15902A8FB9CA002B63F2 /* Banshee.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD158F2A8FB9CA002B63F2 /* Banshee.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A0092EC2A8385EF00B49BAA /* CameraViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewRepresentable.swift; sourceTree = "<group>"; };
+		6A0092EE2A83873100B49BAA /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		6A0092F02A83877F00B49BAA /* CameraController+DelegateSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraController+DelegateSession.swift"; sourceTree = "<group>"; };
+		6A0092F92A84786B00B49BAA /* CameraController+ObjectDetections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraController+ObjectDetections.swift"; sourceTree = "<group>"; };
+		6A0093022A863C7D00B49BAA /* CameraController+GhostLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraController+GhostLogic.swift"; sourceTree = "<group>"; };
 		6A24B6CA2A7C11B60056AA03 /* GhostHunting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhostHunting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A24B6CD2A7C11B60056AA03 /* GhostHuntingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostHuntingApp.swift; sourceTree = "<group>"; };
 		6A24B6D12A7C11B70056AA03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A24B6D42A7C11B70056AA03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6A370E852A93BEDC00C94600 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		6A370E892A93EBFD00C94600 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		6A370E752A90E3E300C94600 /* Banshee.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Banshee.usdz; sourceTree = "<group>"; };
+		6A370E7B2A922C4700C94600 /* Blood.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Blood.usdz; sourceTree = "<group>"; };
+		6A370E7C2A922C4700C94600 /* Bone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bone.usdz; sourceTree = "<group>"; };
+		6A370E7D2A922C4700C94600 /* Skull.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Skull.usdz; sourceTree = "<group>"; };
+		6A370E812A92E78900C94600 /* CameraBgSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CameraBgSound.mp3; sourceTree = "<group>"; };
+		6A40A36D2A825F4F0083633F /* ImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOrientation.swift; sourceTree = "<group>"; };
+		6A40A36F2A825F660083633F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		6A5B57F82A906C2A00C94236 /* GhostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostModel.swift; sourceTree = "<group>"; };
+		6AAD157E2A8CA9FC002B63F2 /* Wraith.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Wraith.usdz; sourceTree = "<group>"; };
+		6AAD15832A8CC4CF002B63F2 /* Wraith.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Wraith.mp3; sourceTree = "<group>"; };
+		6AAD15852A8CDF8D002B63F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6AAD158F2A8FB9CA002B63F2 /* Banshee.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Banshee.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
+/* Begin PBXFrameworksB
+ldPhase section */
 		6A24B6C72A7C11B60056AA03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,6 +66,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A0092F22A83884600B49BAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A5B57F82A906C2A00C94236 /* GhostModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6A0092FB2A84C8A100B49BAA /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				6A370E7B2A922C4700C94600 /* Blood.usdz */,
+				6A370E7C2A922C4700C94600 /* Bone.usdz */,
+				6A370E7D2A922C4700C94600 /* Skull.usdz */,
+				6A370E752A90E3E300C94600 /* Banshee.usdz */,
+				6AAD157E2A8CA9FC002B63F2 /* Wraith.usdz */,
+			);
+			path = Art;
+			sourceTree = "<group>";
+		};
 		6A24B6C12A7C11B60056AA03 = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +105,14 @@
 		6A24B6CC2A7C11B60056AA03 /* GhostHunting */ = {
 			isa = PBXGroup;
 			children = (
-				6A370E832A93BE0E00C94600 /* View */,
+				6AAD15852A8CDF8D002B63F2 /* Info.plist */,
+				6AAD15802A8CBF7F002B63F2 /* Sfx */,
+				6A0092FB2A84C8A100B49BAA /* Art */,
+				6A0092F22A83884600B49BAA /* Model */,
+				6A40A3662A825E760083633F /* Data */,
+				6A40A3642A825E490083633F /* Enum */,
+				6A40A3632A825E410083633F /* ViewModel */,
+				6A40A3622A825E3B0083633F /* View */,
 				6A24B6CD2A7C11B60056AA03 /* GhostHuntingApp.swift */,
 				6A24B6D12A7C11B70056AA03 /* Assets.xcassets */,
 				6A24B6D32A7C11B70056AA03 /* Preview Content */,
@@ -73,9 +132,46 @@
 			isa = PBXGroup;
 			children = (
 				6A370E852A93BEDC00C94600 /* HomeView.swift */,
-				6A370E892A93EBFD00C94600 /* CameraView.swift */,
+				6A40A36F2A825F660083633F /* CameraView.swift */,
+				6A0092EC2A8385EF00B49BAA /* CameraViewRepresentable.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6A40A3632A825E410083633F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6A0092EE2A83873100B49BAA /* CameraController.swift */,
+				6A0092F02A83877F00B49BAA /* CameraController+DelegateSession.swift */,
+				6A0092F92A84786B00B49BAA /* CameraController+ObjectDetections.swift */,
+				6A0093022A863C7D00B49BAA /* CameraController+GhostLogic.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6A40A3642A825E490083633F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				6A40A36D2A825F4F0083633F /* ImageOrientation.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		6A40A3662A825E760083633F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6AAD15802A8CBF7F002B63F2 /* Sfx */ = {
+			isa = PBXGroup;
+			children = (
+				6A370E812A92E78900C94600 /* CameraBgSound.mp3 */,
+				6AAD158F2A8FB9CA002B63F2 /* Banshee.mp3 */,
+				6AAD15832A8CC4CF002B63F2 /* Wraith.mp3 */,
+			);
+			path = Sfx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +233,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A24B6D52A7C11B70056AA03 /* Preview Assets.xcassets in Resources */,
+				6A370E822A92E78900C94600 /* CameraBgSound.mp3 in Resources */,
 				6A24B6D22A7C11B70056AA03 /* Assets.xcassets in Resources */,
+				6A370E762A90E3E300C94600 /* Banshee.usdz in Resources */,
+				6A370E7E2A922C4700C94600 /* Blood.usdz in Resources */,
+				6A370E7F2A922C4700C94600 /* Bone.usdz in Resources */,
+				6AAD157F2A8CA9FC002B63F2 /* Wraith.usdz in Resources */,
+				6AAD15842A8CC4CF002B63F2 /* Wraith.mp3 in Resources */,
+				6A370E802A922C4700C94600 /* Skull.usdz in Resources */,
+				6AAD15902A8FB9CA002B63F2 /* Banshee.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +254,14 @@
 			files = (
 				6A370E8A2A93EBFD00C94600 /* CameraView.swift in Sources */,
 				6A370E862A93BEDC00C94600 /* HomeView.swift in Sources */,
+				6A0092EF2A83873100B49BAA /* CameraController.swift in Sources */,
+				6A0093032A863C7D00B49BAA /* CameraController+GhostLogic.swift in Sources */,
+				6A5B57F92A906C2A00C94236 /* GhostModel.swift in Sources */,
+				6A40A36E2A825F4F0083633F /* ImageOrientation.swift in Sources */,
 				6A24B6CE2A7C11B60056AA03 /* GhostHuntingApp.swift in Sources */,
+				6A0092FA2A84786B00B49BAA /* CameraController+ObjectDetections.swift in Sources */,
+				6A0092F12A83877F00B49BAA /* CameraController+DelegateSession.swift in Sources */,
+				6A0092ED2A8385EF00B49BAA /* CameraViewRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +393,15 @@
 				DEVELOPMENT_TEAM = 9CPQ5HZ2TL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GhostHunting/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pantopix;
+				INFOPLIST_KEY_NSCameraUsageDescription = "using camera for identifying with camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,11 +426,15 @@
 				DEVELOPMENT_TEAM = 9CPQ5HZ2TL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GhostHunting/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pantopix;
+				INFOPLIST_KEY_NSCameraUsageDescription = "using camera for identifying with camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
